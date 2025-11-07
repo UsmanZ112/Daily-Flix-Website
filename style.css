@@ -1,0 +1,649 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Base body styles shared across ALL pages */
+body {
+  width: 100%;
+  margin: 0 auto;
+  /* centers content horizontally if width < 100% */
+  font-family: Arial, Helvetica, sans-serif;
+  /* clean sans-serif font */
+  line-height: 1.5;
+  color: #222;
+  background: #fff;
+  /* default background unless overridden by page-specific styles */
+}
+
+
+/* ==========================
+   HEADER SECTION (Shared)
+   ========================== */
+
+/* Fixed header bar at top */
+.headerSection {
+  background-color: darkgray;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 54px;
+  width: 100%;
+  z-index: 1000;
+  /* keeps it above all content */
+}
+
+/* Header links */
+.headerSection a {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 10px 16px;
+  font-size: 21px;
+}
+
+/* Active link styling */
+.headerSection a.active {
+  background-color: black;
+  color: white;
+}
+
+/* Hover effect */
+.headerSection a:hover {
+  background-color: black;
+  color: white;
+}
+
+
+/* ==========================
+   HOME PAGE (Landing / Hero)
+   Add class="home" to <body>
+   ========================== */
+
+body.home {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  height: 78vh;                     /* full viewport */
+  background: url('economy1.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Blur effect over hero */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  /* blur + darken */
+  transform: scale(1.05);            /* avoid edges showing */
+  z-index: 1;
+}
+
+/* Overlay text content */
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+}
+
+/* Hidden text */
+.hidden-text {
+  opacity: 0;
+  transform: translatex(25px);
+  transition: all 0.6s ease;
+}
+.button{
+    opacity: 0;
+  transform: translatex(25px);
+  transition: all 0.6s ease;
+}
+
+/* On hover -> fade in + move up */
+.hero:hover .hidden-text{
+  opacity: 1;
+  transform: translatex(0);
+}
+.hero:hover .button{
+   opacity: 1;
+  transform: translatex(0);
+}
+.hero-overlay .button{
+   position: absolute;
+  top: 95%;
+  left: 40%;  
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #4d3939;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  margin-top: 9px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.button:hover {
+  background-color:white ;
+
+  color: black;
+  border: solid 2px;
+  border-color: black;
+}
+
+/* Optional zoom on hover */
+.hero:hover::before {
+  transform: scale(1.1);
+    filter: blur(6px) brightness(0.6);
+}
+
+
+
+.IndexContent {
+
+  max-width: 100%;
+  padding: 20px 40px;
+  margin: 30px 50px 30px 50px;
+  /* top=0, right=50, bottom=30, left=50 */
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  
+}
+.IndexContent h2{
+  text-align: center;
+  font-weight: bold;
+}
+.index p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: black;
+
+}
+
+
+
+section {
+  /* max-width: 1200px; */
+ /* margin: 60px auto; */
+  /* gives spacing from hero */
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Section headings */
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+section#about {
+  display: block;
+}
+
+.content {
+  display: flex;
+  /* image and paragraph side by side */
+  gap: 30px;
+  /* Space between image and text */
+  align-items: stretch;
+  /* Align at the top */
+}
+
+.content img {
+  width: 340px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.content p {
+  text-align: justify;
+  margin: 0;
+}
+
+
+
+/* ==========================
+   LOGIN PAGE
+   Add class="login" to <body>
+   ========================== */
+
+/* Page-wide login styles */
+body.login {
+  background: #f1f4f5;
+  color: #0a0101bd;
+  font-size: 16px;
+  padding: 20px;
+  margin-top: 20px;
+  /* pushes content below header */
+}
+
+/* Form container box */
+body.login .form-container {
+  width: 400px;
+  background: #fff;
+  margin: 0 auto;
+  /* centers form horizontally */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form full width */
+body.login form {
+  width: 100%;
+}
+
+/* Login page headings */
+body.login h2 {
+  text-align: center;
+  color: #333;
+  padding-top: 20px;
+}
+
+/* Labels */
+body.login label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+  margin-right: 10px;
+}
+
+/* Input fields */
+body.login input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+
+/* Submit button */
+body.login input[type="submit"] {
+  background: #007BFF;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 5px;
+}
+
+body.login input[type="submit"]:hover {
+  background: #0056b3;
+}
+
+.login a {
+  background-color: rgb(153, 68, 53);
+  color: white;
+  text-decoration: none;
+  padding: 10px 14px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+.login a:hover {
+  background-color: #32373d;
+  padding: 14px;
+}
+
+/* SERVICES Section  */
+
+
+body.services {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.service header {
+
+  background: #222;
+  /* Dark background for header */
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+.service{
+  width: 100%;
+}
+
+/* Main Services Section */
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section Styling */
+.service-image {
+  background: url('earth6.jpg') center/cover no-repeat;
+  /* Background hero image */
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.service-image h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.service-text p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1em;
+  font-weight: bold;
+  /* replaces <b> */
+}
+.service footer{
+
+   width: 100%;
+   margin: 0;
+  background: #333;
+  /* Dark background */
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  clear: both;
+}
+
+
+/* Cards Container */
+.below-services {
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+
+  /*max-width:1000px; */
+  margin: 10px auto;
+  /* gives spacing from above block */
+  background: #fffcfc;
+  padding: 20px 40px;
+  border-radius: 8px;
+  text-align: justify;
+}
+
+/* Section headings */
+.below-services h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  display: block;
+}
+
+
+
+.below {
+  display: flex;
+  /* place cards side by side */
+  justify-content: center;
+  /* center them horizontally */
+  gap: 20px;
+  /* spacing between cards */
+  flex-wrap: wrap;
+  /* makes it responsive */
+  margin: 50px auto;
+  max-width: 1100px;
+}
+
+/* Individual Card Styling */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1 1 300px;
+  /* flexible width, min 300px */
+  max-width: 320px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on cards */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Images */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  /* keeps aspect ratio */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Card Headings */
+.card h3 {
+  margin: 10px 0;
+  font-size: 1.3em;
+  color: #333;
+}
+
+/* Card Paragraphs */
+.card p {
+  font-size: 1em;
+  color: #666;
+}
+
+
+
+/* CSS FOR TESTIMONIALS */
+
+.testimonial {
+
+  /* max-width: 1000px; */
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 40px;
+  background: #f9fbfc;
+  border-radius: 10px;
+}
+
+.testimonial h3 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.testimonial p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  /*font-weight:bold; */
+}
+
+.testim-container {
+  padding: 10px;
+  display: flex;
+  justify-content: center;   /* center the cards */
+  gap: 35px;                 /* spacing between them */
+  flex-wrap: wrap;           /* allow wrapping on smaller screens */
+}
+
+.testim {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  display: flex;             /* flex layout inside each card */
+  align-items: center;       /* vertical alignment */
+  gap: 15px;
+  flex: 1 1 45%;             /* equal width (~half each row) */
+  min-height: 140px;         /* equal height */
+  max-width: 400px;          /* prevents oversized stretching */
+  box-sizing: border-box;
+}
+
+.testim img {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+}
+
+.testim p, 
+.testim q {
+  margin: 4px 0;
+  text-align: left;
+}
+.testim q {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+/* CTA SECTION */
+.calltoAct {
+  background-color: #fdfafa;
+  padding: 40px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+
+.cta {
+  display: flex;
+  justify-content: space-between;  /* pushes text left, button right */
+  align-items: center;             /* vertical alignment */
+  gap: 20px;
+  max-width: 900px;                /* give more breathing room */
+  margin: 0 auto;
+  border-radius: 10px;
+  text-align: left;                /* text aligns naturally */
+}
+
+.cta h3 {
+  color: black;
+  margin: 0 0 10px 0;
+}
+
+.cta p {
+  font-size: 16px;
+  margin: 0;
+  text-align: justify;
+}
+
+.cta a {
+  text-decoration: none;
+  background-color: #333;
+  padding: 12px 20px;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  white-space: nowrap;             /* keeps button on one line */
+  transition: background 0.3s, color 0.3s;
+}
+
+.cta a:hover {
+  background-color: wheat;
+  color: rgb(49, 47, 43);
+  cursor: pointer;
+}
+
+/* Contact Us Section */
+.contact-section {
+
+  padding: 50px 20px;
+  background-color: #f9fbfc;
+ 
+}
+
+.contact-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+.contact-form, 
+.contact-image {
+  flex: 1 1 45%;  
+}
+
+.contact-form h3 {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.contact-form button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #555;
+}
+
+.contact-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.footer {
+   width: 100%;
+   margin: 0;
+  background: #333;
+  /* Dark background */
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  clear: both;
+}
+
