@@ -74,7 +74,7 @@ body.home {
 .hero {
   position: relative;
   height: 78vh;                     /* full viewport */
-  background: url('economy1.jpg') center/cover no-repeat;
+  background: url('images/economy1.jpg') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -347,7 +347,7 @@ body.services {
 
 /* Hero Section Styling */
 .service-image {
-  background: url('earth6.jpg') center/cover no-repeat;
+  background: url('images/earth6.jpg') center/cover no-repeat;
   /* Background hero image */
   color: white;
   text-align: center;
